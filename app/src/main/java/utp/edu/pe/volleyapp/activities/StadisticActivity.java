@@ -1,4 +1,4 @@
-package utp.edu.pe.volleyapp;
+package utp.edu.pe.volleyapp.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -26,6 +26,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import utp.edu.pe.volleyapp.R;
+
 
 public class StadisticActivity extends AppCompatActivity {
     private static final String REGISTER_URL = "http://192.241.166.108/WebService/stadistic.php";
@@ -43,10 +45,10 @@ public class StadisticActivity extends AppCompatActivity {
         Intent intent = getIntent();
         final String username = intent.getStringExtra("username").trim();
 
-        BarData data = new BarData(getXAxisValues());
-        chart.setData(data);
-        chart.setDescription("");
-        chart.invalidate();
+      //  BarData data = new BarData(getXAxisValues());
+       // chart.setData(data);
+       // chart.setDescription("");
+       // chart.invalidate();
     }
 
     private void Staditic(){
@@ -78,7 +80,7 @@ public class StadisticActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    @Override
+   /* @Override
     public void onClick(View v) {
         Staditic();
     }
@@ -109,6 +111,6 @@ public class StadisticActivity extends AppCompatActivity {
         xAxis.add("Expense");
         return xAxis;
     }
-
+*/
 
 }

@@ -31,7 +31,7 @@
         completions."
     </string>
     <string name="title_activity_register_user">RegisterUserActivity</string>
-    <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="title_activity_user_profile">User Profile</string>
     <string name="title_activity_income">IncomeActivity</string>
     <string name="title_activity_expense">ExpenseActivity</string>
     <string name="title_activity_stadistic">StadisticActivity</string>

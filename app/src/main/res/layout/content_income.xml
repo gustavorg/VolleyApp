@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="utp.edu.pe.volleyapp.IncomeActivity"
+    tools:context=".activities.IncomeActivity"
     tools:showIn="@layout/activity_income">
 
     <ImageView
@@ -18,7 +18,7 @@
         android:id="@+id/imageView5"
         android:src="@drawable/income"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/ElectricityEditText" />
+        android:layout_above="@+id/electricityEditText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="Gas"
         android:id="@+id/textView3"
-        android:layout_alignBottom="@+id/GasEditText"
+        android:layout_alignBottom="@+id/gasEditText"
         android:layout_alignStart="@+id/textView2" />
 
     <TextView
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/ElectricityEditText"
+        android:id="@+id/electricityEditText"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -69,27 +69,27 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/WaterEditText"
+        android:id="@+id/waterEditText"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignBottom="@+id/textView4"
-        android:layout_alignStart="@+id/ElectricityEditText" />
+        android:layout_alignStart="@+id/electricityEditText" />
 
     <EditText
         android:layout_width="@dimen/abc_action_bar_stacked_max_height"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/GasEditText"
-        android:layout_below="@+id/ElectricityEditText"
-        android:layout_alignStart="@+id/WaterEditText" />
+        android:id="@+id/gasEditText"
+        android:layout_below="@+id/electricityEditText"
+        android:layout_alignStart="@+id/waterEditText" />
 
     <EditText
         android:layout_width="@dimen/abc_action_bar_stacked_max_height"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/InternetEditText"
-        android:layout_below="@+id/WaterEditText"
+        android:id="@+id/internetEditText"
+        android:layout_below="@+id/waterEditText"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

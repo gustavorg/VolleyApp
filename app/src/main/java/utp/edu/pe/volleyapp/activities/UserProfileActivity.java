@@ -1,22 +1,22 @@
-package utp.edu.pe.volleyapp;
+package utp.edu.pe.volleyapp.activities;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import utp.edu.pe.volleyapp.R;
+
+
 public class UserProfileActivity extends AppCompatActivity {
 
     TextView textView;
-    Button IncomesButton;
-    Button ExpensesButton;
+    Button incomesButton;
+    Button expensesButton;
+    ImageView logoutImageview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,26 +26,36 @@ public class UserProfileActivity extends AppCompatActivity {
         Intent intent = getIntent();
         textView.setText(intent.getStringExtra(LoginActivity.KEY_USERNAME));
 
-        IncomesButton = (Button) findViewById(R.id.IncomesButton);
-        IncomesButton.setOnClickListener(new View.OnClickListener() {
+        incomesButton = (Button) findViewById(R.id.incomesButton);
+        incomesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), IncomeActivity.class);
                 Intent intent = getIntent();
-                i.putExtra("username", intent.getStringExtra(LoginActivity.KEY_USERNAME) );
+                i.putExtra("username", intent.getStringExtra(LoginActivity.KEY_USERNAME));
                 startActivity(i);
             }
         });
 
-        ExpensesButton = (Button) findViewById(R.id.ExpensesButton);
-        ExpensesButton.setOnClickListener(new View.OnClickListener() {
+        expensesButton = (Button) findViewById(R.id.expensesButton);
+        expensesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), ExpenseActivity.class);
                 Intent intent = getIntent();
-                i.putExtra("username", intent.getStringExtra(LoginActivity.KEY_USERNAME) );
+                i.putExtra("username", intent.getStringExtra(LoginActivity.KEY_USERNAME));
                 startActivity(i);
             }
         });
+
+        logoutImageview = (ImageView) findViewById(R.id.logoutimageView);
+        logoutImageview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

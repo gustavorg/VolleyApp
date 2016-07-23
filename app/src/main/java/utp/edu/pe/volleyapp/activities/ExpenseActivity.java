@@ -1,4 +1,4 @@
-package utp.edu.pe.volleyapp;
+package utp.edu.pe.volleyapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,66 +19,61 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IncomeActivity extends AppCompatActivity implements View.OnClickListener{
-    private static final String REGISTER_URL = "http://192.241.166.108/WebService/registerincome.php";
+import utp.edu.pe.volleyapp.R;
 
-    public static final String KEY_ELECTRICITY = "electricity";
-    public static final String KEY_GAS = "gas";
-    public static final String KEY_WATER = "water";
-    public static final String KEY_INTERNET = "internet";
+public class ExpenseActivity extends AppCompatActivity  implements View.OnClickListener {
+
+    private static final String REGISTER_URL = "http://192.241.166.108/WebService/registerexpense.php";
+
+    public static final String KEY_SALARYJ = "salaryj";
+    public static final String KEY_SALARYP = "salaryp";
     public static final String KEY_USERNAME = "username";
 
-    EditText ElectricityEditText;
-    EditText GasEditText;
-    EditText WaterEditText;
-    EditText InternetEditText;
+    EditText salaryJEditText;
+    EditText salaryPEditText;
+
+    private String salaryj;
+    private String salaryp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_income);
+        setContentView(R.layout.activity_expense);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ElectricityEditText = (EditText) findViewById(R.id.ElectricityEditText);
-        GasEditText = (EditText) findViewById(R.id.GasEditText);
-        WaterEditText = (EditText) findViewById(R.id.WaterEditText);
-        InternetEditText = (EditText) findViewById(R.id.InternetEditText);
+        salaryJEditText = (EditText) findViewById(R.id.salaryJEditText);
+        salaryPEditText = (EditText) findViewById(R.id.salaryPEditText);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);
+
     }
-    private void registerIncome(){
-        final String electricity = ElectricityEditText.getText().toString().trim();
-        final String  gas = GasEditText.getText().toString().trim();
-        final String water = WaterEditText.getText().toString().trim();
+    private void registerExpense(){
+        salaryj = salaryJEditText.getText().toString().trim();
+        salaryp = salaryPEditText.getText().toString().trim();
         Intent intent = getIntent();
         final String username = intent.getStringExtra("username").trim();
-        final String  internet = InternetEditText.getText().toString().trim();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, REGISTER_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(IncomeActivity.this,response,Toast.LENGTH_LONG).show();
-                        ElectricityEditText.setText("");
-                        GasEditText.setText("");
-                        WaterEditText.setText("");
-                        InternetEditText.setText("");
+                        Toast.makeText(ExpenseActivity.this,response,Toast.LENGTH_LONG).show();
+                        salaryJEditText.setText("");
+                        salaryPEditText.setText("");
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(IncomeActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(ExpenseActivity.this,error.toString(),Toast.LENGTH_LONG).show();
                     }
                 }){
             @Override
             protected Map<String,String> getParams(){
                 Map<String, String> params = new HashMap<String, String>();
-                params.put(KEY_ELECTRICITY,electricity);
-                params.put(KEY_GAS,gas);
-                params.put(KEY_WATER, water);
-                params.put(KEY_INTERNET, internet);
+                params.put(KEY_SALARYJ,salaryj);
+                params.put(KEY_SALARYP,salaryp);
                 params.put(KEY_USERNAME, username);
                 return params;
             }
@@ -91,6 +86,6 @@ public class IncomeActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        registerIncome();
+        registerExpense();
     }
 }

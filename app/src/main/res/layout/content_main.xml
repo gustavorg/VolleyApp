@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity"
+    tools:context=".activities.MainActivity"
     tools:showIn="@layout/activity_main">
 
 
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/action_sign_in_short"
-        android:id="@+id/StartButton"
+        android:id="@+id/startButton"
         android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
         android:background="#6fe2ff"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="@string/action_sign_in"
         android:id="@+id/registerButton"
-        android:layout_below="@+id/StartButton"
+        android:layout_below="@+id/startButton"
         android:layout_alignParentEnd="true"
         android:background="#6fe2ff"
         android:textColor="#f8f9f9" />
