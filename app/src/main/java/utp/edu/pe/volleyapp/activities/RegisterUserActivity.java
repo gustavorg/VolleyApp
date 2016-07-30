@@ -58,6 +58,9 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onResponse(String response) {
                             Toast.makeText(RegisterUserActivity.this,response,Toast.LENGTH_LONG).show();
+                        editTextEmail.setText("");
+                        editTextPassword.setText("");
+                        editTextUsername.setText("");
                         }
                 },
                 new Response.ErrorListener() {
