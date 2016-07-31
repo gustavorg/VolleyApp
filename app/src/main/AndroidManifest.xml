@@ -60,15 +60,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.UserProfileActivity" />
         </activity>
-        <activity
-            android:name=".activities.StadisticActivity"
-            android:label="@string/title_activity_stadistic"
-            android:parentActivityName=".activities.UserProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.UserProfileActivity" />
-        </activity>
     </application>
 
 </manifest>
